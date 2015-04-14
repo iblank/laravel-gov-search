@@ -24,7 +24,7 @@ class GovSearchServiceProvider extends ServiceProvider {
 
         if ($this->isLegacyLaravel() || $this->isOldLaravel())
         {
-            $this->package('iblank/govsearch', 'iblank/govsearch');
+            $this->package('iblank/laravel-gov-search', 'iblank/govsearch');
         }
 
         $loader = \Illuminate\Foundation\AliasLoader::getInstance();
