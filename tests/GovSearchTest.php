@@ -13,7 +13,7 @@ class GovSearchTest extends \PHPUnit_Framework_TestCase {
 	var $govsearch;
 
 	public function setUp() {
-		$TEST_API_KEY = 'weioevinweoih4oi4n24lrn4'; // jibberish
+		$TEST_API_KEY = 'weioevinweoih4oi4n24lrn4567'; // jibberish
 		$TEST_API_AFFILIATE = 'www.anything.com';
 		$this->govsearch = new GovSearch( $TEST_API_KEY, $TEST_API_AFFILIATE );
 	}
