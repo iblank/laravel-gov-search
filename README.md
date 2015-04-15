@@ -2,13 +2,13 @@
 Laravel PHP Facade/Wrapper for the USA.gov, DigitalGov Search API. You will need to create an account with DigialGov to create an affiliate id and access token key: http://search.digitalgov.gov/
 
 ## Installation
-1. Add `iblank/laravel-gov-search` to your `composer.json` file:
+1. Add project to your `composer.json` file:
         ```
         "iblank/laravel-gov-search": "dev-master"
         ```
 2. Run `composer update` to pull down the latest version of the package.
-3. Open `app/config/app.php` and add the service provider to your `providers` array
-        ```php
+3. Open `app/config/app.php` and add the service provider to your `providers` array:
+        ```
         'providers' => array(
             'iblank\GovSearch\GovSearchServiceProvider'
         )
@@ -26,7 +26,7 @@ Run `php artisan config:publish alaouy/youtube` and set your API key and affilia
 /app/config/packages/alaouy/youtube/config.php
 ```
 ### Default Options
-Optionally change the default values for search requests using the `DEFAULTS` array in the config file.
+Optionally change the default values for search requests using the `DEFAULTS` array in the config file:
 ```php
 'DEFAULTS' => array(
     'highlight' => true,
@@ -47,19 +47,19 @@ Optionally change the default values for search requests using the `DEFAULTS` ar
 $apiResult = GovSearch::search($search, $offset, $options);
 ```
 #### Format of Returned Object:
-```
+```JSON
 {
     total: [# of results],
     next_offset: [next offset index],
     spelling_correction: [spell correction on search term],
-    results: array(
+    results: [
         {
             title: [result title],
             url: [result url],
             snippet: [result snippet],
             publication_date [result pub date]
         }
-    )
+    ]
 }
 ```
 
@@ -86,6 +86,7 @@ $totalPages = ceil($totalResults / $options['limit']);
 $page = 3;
 $offset = ($page - 1) * $options['limit'];
 $apiResults = GovSearch::search($search, $offset, $options);
+```
 
 ## Credits
 Built on code from Alaouy's [Youtube](https://github.com/alaouy/Youtube).
