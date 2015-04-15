@@ -40,11 +40,10 @@ Optionally change the default values for search requests using the `DEFAULTS` ar
 /**
  * Returns PHP object of search results
  * @param $search (string) - what to search for
- * @param $offset (int) - starting index of results array (default 0)
- * @param $options (array) - override any of the defaults set in the config file
+ * @param $options (array) - set an 'offset' index and/or override any of the defaults set in the config file
  * @return (object) - PHP object (details below)
  */
-$apiResult = GovSearch::search($search, $offset, $options);
+$apiResult = GovSearch::search($search, $options);
 ```
 #### Sample Format of Returned Object:
 ```javascript
@@ -67,13 +66,13 @@ $apiResult = GovSearch::search($search, $offset, $options);
 ```php
 // Set Defaults
 $search = 'Medal of Honor';
-$offset = 0;
 $options = array(
+    'offset' => 0,
     'limit' => 25
 );
 
 // Make initial call
-$apiResult = GovSearch::search($search, $offset, $options);
+$apiResult = GovSearch::search($search, $options);
 
 // Set total results
 $totalResults = $apiResult['total'];
@@ -84,8 +83,8 @@ $totalPages = ceil($totalResults / $options['limit']);
 // Using this example, with 77 total results, would give you 4 pages
 // If you want to go to page 3 of 4...
 $page = 3;
-$offset = ($page - 1) * $options['limit'];
-$apiResults = GovSearch::search($search, $offset, $options);
+$options['offset'] = ($page - 1) * $options['limit'];
+$apiResults = GovSearch::search($search, $options);
 ```
 
 ## Credits

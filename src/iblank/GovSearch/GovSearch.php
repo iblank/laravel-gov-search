@@ -51,14 +51,14 @@ class GovSearch {
 	 * @return \StdClass
 	 * @throws \Exception
 	 */
-	public function search($search, $offset = 0, $opts = array()) {
+	public function search($search, $opts = array()) {
 		$API_URL = $this->getApi('search');
-		
+
 		$params = array(
 			'query' => $search,
 			'enable_highlighting' => (isset($opts['highlight'])) ? $opts['highlight'] : $this->highlight,
 			'limit' => (isset($opts['limit'])) ? $opts['limit'] : $this->limit,
-			'offset' => $offset,
+			'offset' => (isset($opts['offset'])) ? $opts['offset'] : 0,
 			'sort_by' => (isset($opts['sort'])) ? $opts['sort'] : $this->sort,
 		);
 
