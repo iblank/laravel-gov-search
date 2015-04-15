@@ -89,4 +89,4 @@ $apiResults = GovSearch::search($search, $offset, $options);
 ```
 
 ## Credits
-Built on code from Alaouy's [Youtube](https://github.com/alaouy/Youtube).
+Built on code from Alaouy's [Youtube](https://github.com/alaouy/Youtube) Laravel Facade/Wrapper.
