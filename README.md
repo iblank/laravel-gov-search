@@ -18,12 +18,12 @@ Laravel PHP Facade/Wrapper for the USA.gov, DigitalGov Search API. You will need
 ### For Laravel 5
 Run `php artisan vendor:publish` and set your API key and affiliate id in the file:
 ```
-/app/config/youtube.php
+/app/config/govsearch.php
 ```
 ### For Laravel 4
-Run `php artisan config:publish alaouy/youtube` and set your API key and affiliate id in the file:
+Run `php artisan config:publish iblank/laravel-gov-search` and set your API key and affiliate id in the file:
 ```
-/app/config/packages/alaouy/youtube/config.php
+/app/config/packages/iblank/laravel-gov-search/config.php
 ```
 ### Default Options
 Optionally change the default values for search requests using the `DEFAULTS` array in the config file:
