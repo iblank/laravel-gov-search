@@ -4,19 +4,15 @@ Laravel PHP Facade/Wrapper for the USA.gov, DigitalGov Search API. You will need
 ## Installation
 1. Add project to the require array in your `composer.json` file:
 
-        ```
         "require": {
             "iblank/laravel-gov-search": "dev-master"
         }
-        ```
 2. Run `composer update` to pull down the latest version of the package.
 3. Open `app/config/app.php` and add the service provider to your `providers` array:
 
-        ```
         'providers' => array(
             'iblank\GovSearch\GovSearchServiceProvider'
         )
-        ```
 
 ## Configuration
 ### For Laravel 5
@@ -59,7 +55,7 @@ $apiResult = GovSearch::search($search, $offset, $options);
     "results": [
         {
             "title": "sample title",
-            "url": http://www.anyplace.com,
+            "url": "http://www.anyplace.com",
             "snippet": "sample snippet",
             "publication_date": "2014-11-24"
         }
