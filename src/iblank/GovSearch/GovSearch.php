@@ -53,6 +53,7 @@ class GovSearch {
 	 */
 	public function search($search, $offset = 0, $opts = array()) {
 		$API_URL = $this->getApi('search');
+		
 		$params = array(
 			'query' => $search,
 			'enable_highlighting' => (isset($opts['highlight'])) ? $opts['highlight'] : $this->highlight,
@@ -60,6 +61,9 @@ class GovSearch {
 			'offset' => $offset,
 			'sort_by' => (isset($opts['sort'])) ? $opts['sort'] : $this->sort,
 		);
+
+		// convert boolean value to string...
+		$params['enable_highlighting'] = ($params['enable_highlighting'])? "true" : "false";
 
 		$apiData = $this->api_get($API_URL, $params);
 		
