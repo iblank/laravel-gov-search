@@ -2,12 +2,16 @@
 Laravel PHP Facade/Wrapper for the USA.gov, DigitalGov Search API. You will need to create an account with DigialGov to create an affiliate id and access token key: http://search.digitalgov.gov/
 
 ## Installation
-1. Add project to your `composer.json` file:
+1. Add project to the require array in your `composer.json` file:
+
         ```
-        "iblank/laravel-gov-search": "dev-master"
+        "require": {
+            "iblank/laravel-gov-search": "dev-master"
+        }
         ```
 2. Run `composer update` to pull down the latest version of the package.
 3. Open `app/config/app.php` and add the service provider to your `providers` array:
+
         ```
         'providers' => array(
             'iblank\GovSearch\GovSearchServiceProvider'
@@ -46,18 +50,18 @@ Optionally change the default values for search requests using the `DEFAULTS` ar
  */
 $apiResult = GovSearch::search($search, $offset, $options);
 ```
-#### Format of Returned Object:
-```JSON
+#### Sample Format of Returned Object:
+```javascript
 {
-    total: [# of results],
-    next_offset: [next offset index],
-    spelling_correction: [spell correction on search term],
-    results: [
+    "total": 356,
+    "next_offset": 20,
+    "spelling_correction": null,
+    "results": [
         {
-            title: [result title],
-            url: [result url],
-            snippet: [result snippet],
-            publication_date [result pub date]
+            "title": "sample title",
+            "url": http://www.anyplace.com,
+            "snippet": "sample snippet",
+            "publication_date": "2014-11-24"
         }
     ]
 }
