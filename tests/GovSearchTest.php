@@ -5,7 +5,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use iblank\GovSearch\GovSearch;
 
 class MockGovSearch {
-	public function search($search, $offset = 0, $opts = array()) {
+	public function search($search, $opts = array()) {
 		$limit = (isset($opts['limit'])) ? $opts['limit'] : 20;
 		$results = array();
 		for($i = 0; $i < $limit; $i++){
@@ -67,7 +67,7 @@ class GovSearchTest extends \PHPUnit_Framework_TestCase {
 		$opts = array(
 			'limit' => rand( 3, 10 )
 		);
-		$response = $this->mocksearch->search( 'medal', 0, $opts );
+		$response = $this->mocksearch->search( 'medal', $opts );
 		$this->assertEquals( $opts['limit'], count( $response->results ) );
 	}
 }
