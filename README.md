@@ -8,11 +8,13 @@ Laravel PHP Facade/Wrapper for the USA.gov, DigitalGov Search API. You will need
             "iblank/laravel-gov-search": "dev-master"
         }
 2. Run `composer update` to pull down the latest version of the package.
-3. Open `app/config/app.php` and add the service provider to your `providers` array:
+3. Open `app/config/app.php`**&#42;** and add the service provider to your `providers` array:
 
         'providers' => array(
             'iblank\GovSearch\GovSearchServiceProvider'
         )
+
+**&#42; NOTE:** if you are using environmental configurations, make sure to place the service provider in the `app.php` file respective to your environment.
 
 ## Configuration
 ### For Laravel 5
